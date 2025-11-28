@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gebäude Gebker - Energieberatung & Gebäudeanalyse</title>
+    <title>Gebäude Gebker - Dein Bauexperte beim Hauskauf</title>
     <style>
         * {
             margin: 0;
@@ -87,7 +87,7 @@
             font-family: 'Arial Black', sans-serif;
         }
         
-        .logo-icon:hover {
+        .logo:hover .logo-icon {
             transform: scale(1.05);
             box-shadow: 0 0 20px rgba(99, 179, 237, 0.5);
             transition: all 0.3s;
@@ -129,7 +129,7 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             padding: 8rem 2rem 4rem;
             text-align: center;
-            color: var(--primary-color);
+            color: white;
         }
         
         .hero h1 {
@@ -188,195 +188,253 @@
             font-size: 1.1rem;
         }
         
-        /* Grid Layouts */
-        .services-grid, .qualifications-grid, .advantages-grid {
+        /* Service Section - Simplified */
+        .service-intro {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 3rem;
+        }
+        
+        .service-highlights {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
         
-        .service-card, .qualification-card, .advantage-card {
+        .highlight-card {
             background: white;
             padding: 2rem;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
             transition: transform 0.3s, box-shadow 0.3s;
         }
         
-        .service-card:hover, .qualification-card:hover, .advantage-card:hover {
+        .highlight-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.15);
         }
         
-        .service-card h3, .qualification-card h3, .advantage-card h3 {
+        .highlight-card h3 {
             color: var(--secondary-color);
             margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .icon {
+            font-size: 2rem;
+        }
+        
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+        }
+        
+        .qualification-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .badge {
+            background: var(--secondary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+        
+        /* Pricing Section - Simplified */
+        .pricing-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .price-box {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .price-box .price {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .price-box .price-label {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+        
+        .price-box ul {
+            list-style: none;
+            text-align: left;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .price-box li {
+            padding: 0.5rem 0;
+            color: var(--text-dark);
             display: flex;
             align-items: center;
             gap: 0.5rem;
         }
         
-        .icon {
-            font-size: 1.5rem;
-        }
-        
-        /* Pricing Section */
-        .pricing-table {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            max-width: 800px;
-            margin: 2rem auto;
-        }
-        
-        .pricing-row {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            padding: 1.5rem 2rem;
-            border-bottom: 1px solid #e2e8f0;
-        }
-        
-        .pricing-row:last-child {
-            border-bottom: none;
-        }
-        
-        .pricing-row:hover {
-            background: var(--bg-light);
-        }
-        
-        .price {
-            text-align: right;
+        .price-box li::before {
+            content: '✓';
+            color: #00ff88;
             font-weight: bold;
+        }
+        
+        /* Process Section */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .step {
+            text-align: center;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+        
+        .step h3 {
             color: var(--secondary-color);
+            margin-bottom: 0.5rem;
         }
         
         /* Contact Section */
         .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .contact-intro {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+        }
+        
+        .contact-options {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: start;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
         }
         
-        .contact-info {
+        .contact-option {
             background: white;
             padding: 2rem;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
         
-        .contact-info h3 {
-            color: var(--secondary-color);
-            margin-bottom: 1.5rem;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
+        .contact-option .icon {
+            font-size: 2.5rem;
             margin-bottom: 1rem;
-            color: var(--text-dark);
         }
         
-        .contact-form {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
+        .contact-option h3 {
+            color: var(--secondary-color);
             margin-bottom: 0.5rem;
+        }
+        
+        .contact-option a {
             color: var(--text-dark);
-            font-weight: 500;
+            text-decoration: none;
         }
         
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #e2e8f0;
-            border-radius: 5px;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-        
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--secondary-color);
-        }
-        
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-        
-        .submit-button {
-            background: var(--secondary-color);
-            color: white;
-            padding: 0.75rem 2rem;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        
-        .submit-button:hover {
-            background: var(--primary-color);
+        .contact-option a:hover {
+            color: var(--secondary-color);
         }
         
         /* Footer */
         footer {
             background: var(--primary-color);
             color: white;
-            padding: 3rem 2rem 1rem;
+            padding: 2rem;
+            text-align: center;
         }
         
         .footer-content {
             max-width: var(--max-width);
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
         }
         
-        .footer-section h3 {
+        .footer-links {
             margin-bottom: 1rem;
         }
         
-        .footer-section a {
+        .footer-links a {
             color: white;
             text-decoration: none;
+            margin: 0 1rem;
             opacity: 0.8;
             transition: opacity 0.3s;
         }
         
-        .footer-section a:hover {
+        .footer-links a:hover {
             opacity: 1;
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            opacity: 0.8;
         }
         
         /* Responsive Design */
         @media (max-width: 768px) {
             .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
                 display: none;
+            }
+            
+            .nav-links.active {
+                display: flex;
             }
             
             .mobile-menu {
@@ -395,19 +453,8 @@
                 font-size: 2rem;
             }
             
-            .contact-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .pricing-row {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            
-            .price {
-                text-align: center;
-                margin-top: 0.5rem;
+            .price-box .price {
+                font-size: 2.5rem;
             }
         }
     </style>
@@ -421,10 +468,10 @@
                 <span>Gebäude Gebker</span>
             </a>
             <ul class="nav-links">
-                <li><a href="#leistungen">Leistungen</a></li>
-                <li><a href="#qualifikationen">Qualifikationen</a></li>
-                <li><a href="#preise">Preise</a></li>
-                <li><a href="#vorteile">Vorteile</a></li>
+                <li><a href="#service">Service</a></li>
+                <li><a href="#about">Über mich</a></li>
+                <li><a href="#ablauf">Ablauf</a></li>
+                <li><a href="#preis">Preis</a></li>
                 <li><a href="#kontakt">Kontakt</a></li>
             </ul>
             <div class="mobile-menu">
@@ -437,157 +484,156 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <h1>Gebäude Gebker</h1>
-        <p>Bausachverständiger und Energieberater</p>
-      
+        <h1>Hey, ich bin Jason! 👋</h1>
+        <p>Dein Bauexperte für den Hauskauf</p>
+        <a href="#kontakt" class="cta-button">Lass uns quatschen</a>
     </section>
 
-    <!-- Leistungen Section -->
-    <section id="leistungen">
+    <!-- Service Section -->
+    <section id="service">
         <div class="container">
-            <h2>Meine Leistungen</h2>
-            <p class="section-subtitle">Begleitung beim Kauf von Eurer Immobilie</p>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3><span class="icon">📋</span> Energieausweis</h3>
-                    <p>Erstellung von Bedarfs- und Verbrauchsausweisen für Wohn- und Nichtwohngebäude nach aktueller GEG.</p>
+            <h2>Was ich für dich tue</h2>
+            <p class="section-subtitle">Entspannte Kaufbegleitung ohne Stress</p>
+            
+            <div class="service-intro">
+                <p>Du hast ein Haus oder eine Wohnung gefunden und bist unsicher, ob du zuschlagen sollst? <strong>Ich komme mit!</strong></p>
+                <p style="margin-top: 1rem;">Als Bauingenieur und gelernter Maurer schaue ich mir die Immobilie mit dir zusammen an. Keine komplizierten Gutachten, keine teuren Berechnungen – einfach meine ehrliche Meinung als Experte, der weiß, worauf es ankommt.</p>
+            </div>
+            
+            <div class="service-highlights">
+                <div class="highlight-card">
+                    <h3><span class="icon">👀</span><br>Geschulter Blick</h3>
+                    <p>Ich sehe, was anderen entgeht – von versteckten Mängeln bis zu Renovierungspotenzial.</p>
                 </div>
-                <div class="service-card">
-                    <h3><span class="icon">🏠</span> Sanierungsfahrplan (iSFP)</h3>
-                    <p>Individueller Sanierungsfahrplan mit detaillierter Analyse und Schritt-für-Schritt Modernisierungskonzept.</p>
+                <div class="highlight-card">
+                    <h3><span class="icon">💬</span><br>Klare Ansagen</h3>
+                    <p>Du bekommst meine ehrliche Einschätzung – verständlich erklärt, ohne Fachchinesisch.</p>
                 </div>
-                <div class="service-card">
-                    <h3><span class="icon">💰</span> Fördermittelberatung</h3>
-                    <p>Optimale Ausschöpfung von BAFA, KfW und regionalen Förderprogrammen für Ihre Sanierung.</p>
-                </div>
-                <div class="service-card">
-                    <h3><span class="icon">🔍</span> Gebäudeanalyse</h3>
-                    <p>Umfassende Bewertung der energetischen Gebäudequalität inklusive Thermografie und Blower-Door-Test.</p>
-                </div>
-                <div class="service-card">
-                    <h3><span class="icon">☀️</span> Heizlastberechnung</h3>
-                    <p>Präzise Dimensionierung von Wärmepumpen und Heizsystemen nach DIN EN 12831.</p>
-                </div>
-                <div class="service-card">
-                    <h3><span class="icon">📊</span> Baubegleitung</h3>
-                    <p>Qualitätssicherung während der Sanierung mit Dokumentation für KfW-Förderung.</p>
+                <div class="highlight-card">
+                    <h3><span class="icon">🤝</span><br>An deiner Seite</h3>
+                    <p>Ich bin dein Backup beim Besichtigungstermin und stelle die richtigen Fragen.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Qualifikationen Section -->
-    <section id="qualifikationen">
+    <!-- About Section -->
+    <section id="about">
         <div class="container">
-            <h2>Meine Qualifikationen</h2>
-            <p class="section-subtitle">Fundierte Ausbildung und langjährige Erfahrung</p>
-            <div class="qualification-card">
-                    <h3><span class="icon">🏗️</span> Maurerausbildung</h3>
-                    <p>Praktische Expertise im Bauhandwerk</p>
+            <h2>Über mich</h2>
+            <p class="section-subtitle">Warum ich der Richtige für dich bin</p>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Moin! Ich bin Jason aus Schwäbisch Hall. Nach meiner Maurerausbildung und dem Bauingenieurstudium habe ich mich als Energie-Effizienz-Experte zertifiziert. Klingt fancy, bedeutet aber einfach: <strong>Ich kenne mich mit Häusern aus – von der Bodenplatte bis zum Dach.</strong></p>
+                    
+                    <p style="margin-top: 1rem;">Als Product Manager bei einer Software-Firma für energetische Gebäudesanierung sehe ich täglich, was bei Immobilien schiefgehen kann. Dieses Wissen gebe ich gerne an dich weiter – ohne den ganzen offiziellen Kram.</p>
+                    
+                    <p style="margin-top: 1rem;">Meine Mission: Dir die Sicherheit geben, dass du keine Schrottimmobilie kaufst. Entspannt, ehrlich und auf Augenhöhe.</p>
                 </div>
-            <div class="qualification-card">
-                    <h3><span class="icon">👷</span> Bauingenieur</h3>
-                    <p>Studium des Bauingenieurwesens mit Schwerpunkt konstruktiver Ingenieurbau (Statik)</p>
-                </div>
-            <div class="qualifications-grid">
-                <div class="qualification-card">
-                    <h3><span class="icon">🎓</span> Energie-Effizienz-Experte</h3>
-                    <p>Zertifiziert für die Förderprogramme des Bundes (dena-Expertenliste)</p>
+                
+                <div class="qualification-badges">
+                    <span class="badge">🏗️ Gelernter Maurer</span>
+                    <span class="badge">👷 Bauingenieur</span>
+                    <span class="badge">🎓 Energie-Effizienz-Experte</span>
+                    <span class="badge">💻 Product Manager</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Preise Section -->
-    <section id="preise">
+    <!-- Process Section -->
+    <section id="ablauf">
         <div class="container">
-            <h2>Meine Preise</h2>
-            <p class="section-subtitle">Transparent und fair kalkuliert</p>
-            <div class="pricing-table">
-                <div class="pricing-row">
-                    <div>Stundensatz</div>
-                    <div class="price">40 €</div>
+            <h2>So läuft's ab</h2>
+            <p class="section-subtitle">Einfach und unkompliziert</p>
+            
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Du meldest dich</h3>
+                    <p>Schreib mir einfach, wann und wo die Besichtigung ist.</p>
                 </div>
-    </section>
-
-    <!-- Vorteile Section -->
-    <section id="vorteile">
-        <div class="container">
-            <h2>Eure Vorteile</h2>
-            <p class="section-subtitle">Warum Ihr Euch für Gebäude Gebker entscheiden solltet</p>
-            <div class="advantages-grid">
-                <div class="advantage-card">
-                    <h3><span class="icon">✅</span> Alles aus einer Hand</h3>
-                    <p>Von der Erstberatung über die Planung bis zur Umsetzungsbegleitung - ich bin Ihr einziger Ansprechpartner.</p>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Wir treffen uns</h3>
+                    <p>Ich komme zum Besichtigungstermin dazu – ganz entspannt.</p>
                 </div>
-                <div class="advantage-card">
-                    <h3><span class="icon">🎯</span> Maximale Förderung</h3>
-                    <p>Ich kenne alle aktuellen Förderprogramme und hole das Maximum für Sie heraus.</p>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Ich schaue genau hin</h3>
+                    <p>Während der Besichtigung checke ich alles Wichtige.</p>
                 </div>
-                <div class="advantage-card">
-                    <h3><span class="icon">⚡</span> Schnelle Bearbeitung</h3>
-                    <p>Kurze Reaktionszeiten und termingerechte Lieferung aller Unterlagen.</p>
-                </div>
-                <div class="advantage-card">
-                    <h3><span class="icon">💡</span> Verständliche Beratung</h3>
-                    <p>Komplexe technische Zusammenhänge erkläre ich Ihnen einfach und nachvollziehbar.</p>
-                </div>
-                <div class="advantage-card">
-                    <h3><span class="icon">🤝</span> Persönlicher Service</h3>
-                    <p>Individuelle Betreuung statt Massenabfertigung - Ihre Ziele stehen im Mittelpunkt.</p>
-                </div>
-                <div class="advantage-card">
-                    <h3><span class="icon">📈</span> Wirtschaftlichkeit</h3>
-                    <p>Alle Maßnahmen werden auf Wirtschaftlichkeit geprüft - Sie investieren nur in sinnvolle Sanierungen.</p>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Du bekommst meine Einschätzung</h3>
+                    <p>Direkt danach besprechen wir, was ich gesehen habe.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Kontakt Section -->
+    <!-- Pricing Section -->
+    <section id="preis">
+        <div class="container">
+            <h2>Was kostet's?</h2>
+            <p class="section-subtitle">Transparent und fair</p>
+            
+            <div class="pricing-content">
+                <div class="price-box">
+                    <div class="price">40€</div>
+                    <div class="price-label">pro Stunde</div>
+                    <ul>
+                        <li>Anfahrt im Umkreis von 30km inklusive</li>
+                        <li>Typische Besichtigung: 1-2 Stunden</li>
+                        <li>Nachbesprechung inklusive</li>
+                        <li>Keine versteckten Kosten</li>
+                        <li>Rechnung für deine Unterlagen</li>
+                    </ul>
+                </div>
+                <p style="color: var(--text-light);">
+                    Eine normale Hausbesichtigung dauert meist 1-2 Stunden.<br>
+                    Du zahlst nur die tatsächliche Zeit – keine Pauschalen, keine Überraschungen.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
     <section id="kontakt">
         <div class="container">
-            <h2>Kontakt</h2>
-            <p class="section-subtitle">Lassen Sie uns über Ihr Projekt sprechen</p>
+            <h2>Lass uns schnacken!</h2>
+            <p class="section-subtitle">Ich freu mich auf deine Nachricht</p>
+            
             <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Kontaktinformationen</h3>
-                    <div class="contact-item">
-                        <span class="icon">📧</span>
-                        <span>info@gebaeude-gebker.de</span>
+                <p class="contact-intro">
+                    Du hast eine Immobilie im Auge? Super! Schreib mir einfach, wo und wann die Besichtigung ist, und wir besprechen alles Weitere.
+                </p>
+                
+                <div class="contact-options">
+                    <div class="contact-option">
+                        <div class="icon">📧</div>
+                        <h3>E-Mail</h3>
+                        <a href="mailto:jason@gebaeude-gebker.de">jason@gebaeude-gebker.de</a>
                     </div>
-                    <div class="contact-item">
-                        <span class="icon">📱</span>
-                        <span>+49 (0) 123 456789</span>
+                    <div class="contact-option">
+                        <div class="icon">📱</div>
+                        <h3>WhatsApp</h3>
+                        <a href="https://wa.me/49123456789">+49 123 456789</a>
                     </div>
-                    <div class="contact-item">
-                        <span class="icon">📍</span>
-                        <span>74523 Schwäbisch Hall</span>
-                    </div>
-                    <div class="contact-item">
-                        <span class="icon">🕐</span>
-                        <span>Mo-Fr: 8:00 - 18:00 Uhr</span>
+                    <div class="contact-option">
+                        <div class="icon">📍</div>
+                        <h3>Einsatzgebiet</h3>
+                        <p>Schwäbisch Hall<br>+ 50km Umkreis</p>
                     </div>
                 </div>
-                <form class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">E-Mail</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Telefon (optional)</label>
-                        <input type="tel" id="phone" name="phone">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Nachricht</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-button">Nachricht senden</button>
-                </form>
+                
+                <div style="background: var(--bg-light); padding: 2rem; border-radius: 10px; margin-top: 2rem;">
+                    <p style="font-size: 1.1rem; color: var(--text-dark);">
+                        <strong>Good Game!</strong> 🎮<br>
+                        Egal ob du gerade dein erstes Haus kaufst oder schon Profi bist – ich bin dabei und unterstütze dich. Keine Frage ist zu blöd, und am Ende weißt du genau, ob die Immobilie ein Treffer oder ein Flop ist.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -595,26 +641,12 @@
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <div class="footer-section">
-                <h3>Gebäude Gebker</h3>
-                <p>Ihr Partner für energieeffizientes Bauen und Sanieren in Schwäbisch Hall und Umgebung.</p>
+            <div class="footer-links">
+                <a href="#impressum">Impressum</a>
+                <a href="#datenschutz">Datenschutz</a>
             </div>
-            <div class="footer-section">
-                <h3>Schnellzugriff</h3>
-                <p><a href="#leistungen">Leistungen</a></p>
-                <p><a href="#qualifikationen">Qualifikationen</a></p>
-                <p><a href="#preise">Preise</a></p>
-                <p><a href="#kontakt">Kontakt</a></p>
-            </div>
-            <div class="footer-section">
-                <h3>Rechtliches</h3>
-                <p><a href="#">Impressum</a></p>
-                <p><a href="#">Datenschutz</a></p>
-                <p><a href="#">AGB</a></p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Gebäude Gebker. Alle Rechte vorbehalten.</p>
+            <p>&copy; 2024 Gebäude Gebker – Jason Gebhardt</p>
+            <p style="margin-top: 0.5rem; opacity: 0.8;">Dein Bauexperte in Schwäbisch Hall</p>
         </div>
     </footer>
 
@@ -625,6 +657,13 @@
         
         mobileMenu.addEventListener('click', () => {
             navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
         });
 
         // Smooth scroll for navigation links
@@ -639,13 +678,6 @@
                     });
                 }
             });
-        });
-
-        // Form submission (basic handler - you'll need to implement actual sending)
-        document.querySelector('.contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Vielen Dank für Ihre Nachricht! Ich melde mich schnellstmöglich bei Ihnen.');
-            this.reset();
         });
     </script>
 </body>
