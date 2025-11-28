@@ -61,16 +61,36 @@
             text-decoration: none;
         }
         
+        /* Gaming-Style GG Logo */
         .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-            border-radius: 8px;
+            width: 45px;
+            height: 45px;
+            background: #1a1a2e;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 1.5rem;
+            position: relative;
+            border: 2px solid #0f3460;
+            box-shadow: 0 0 15px rgba(99, 179, 237, 0.3);
+        }
+        
+        .logo-icon::before {
+            content: 'GG';
+            font-size: 20px;
+            font-weight: 900;
+            background: linear-gradient(45deg, #00ff88, #00ccff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-style: italic;
+            font-family: 'Arial Black', sans-serif;
+        }
+        
+        .logo-icon:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(99, 179, 237, 0.5);
+            transition: all 0.3s;
         }
         
         .nav-links {
@@ -397,7 +417,7 @@
     <header>
         <nav>
             <a href="#" class="logo">
-                <div class="logo-icon">🏢</div>
+                <div class="logo-icon"></div>
                 <span>Gebäude Gebker</span>
             </a>
             <ul class="nav-links">
