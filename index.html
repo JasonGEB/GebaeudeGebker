@@ -124,31 +124,32 @@
             transition: 0.3s;
         }
         
-        /* Hero Section */
+        /* Hero Section - GEÄNDERT: Heller Hintergrund mit blauer Schrift */
         .hero {
-            background: linear-gradient(135deg, #1a1a2e 0%, #2d3748 100%);
+            background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
             padding: 8rem 2rem 4rem;
             text-align: center;
-            color: white;
+            color: var(--primary-color);
         }
         
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
             font-weight: 700;
+            color: var(--primary-color);
         }
         
         .hero p {
             font-size: 1.3rem;
             margin-bottom: 2rem;
-            opacity: 0.95;
+            color: var(--text-dark);
         }
         
         .cta-button {
             display: inline-block;
             padding: 1rem 2rem;
-            background: white;
-            color: var(--primary-color);
+            background: var(--primary-color);
+            color: white;
             text-decoration: none;
             border-radius: 50px;
             font-weight: bold;
@@ -157,7 +158,8 @@
         
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 20px rgba(44, 82, 130, 0.3);
+            background: var(--secondary-color);
         }
         
         /* Sections */
@@ -538,7 +540,9 @@
                 <div class="about-image">
                     <!-- Hier kannst du dein Bild einfügen -->
                     <!-- <img src="pfad-zu-deinem-bild.jpg" alt="Jason Gebker"> -->
-                    <img src="jason.jpg" alt="Jason Gebker">
+                    <div class="placeholder-image">
+                        Dein Foto hier
+                    </div>
                 </div>
                 
                 <div class="about-text">
