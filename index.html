@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gebäude Gebker - Dein Bauexperte beim Hauskauf</title>
+    <title>Gebäude Gebker - Euer Bauexperte beim Hauskauf</title>
     <style>
         * {
             margin: 0;
@@ -126,7 +126,7 @@
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            background: linear-gradient(135deg, #1a1a2e 0%, #2d3748 100%);
             padding: 8rem 2rem 4rem;
             text-align: center;
             color: white;
@@ -135,7 +135,7 @@
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            font-weight: 700;
         }
         
         .hero p {
@@ -236,9 +236,36 @@
         /* About Section */
         .about-content {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            max-width: 800px;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            align-items: center;
+        }
+        
+        .about-image {
+            text-align: center;
+        }
+        
+        .about-image img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .placeholder-image {
+            width: 100%;
+            max-width: 400px;
+            height: 500px;
+            background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-size: 1.2rem;
             margin: 0 auto;
         }
         
@@ -290,27 +317,6 @@
             font-size: 1.2rem;
             color: var(--text-light);
             margin-bottom: 1.5rem;
-        }
-        
-        .price-box ul {
-            list-style: none;
-            text-align: left;
-            max-width: 400px;
-            margin: 0 auto;
-        }
-        
-        .price-box li {
-            padding: 0.5rem 0;
-            color: var(--text-dark);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .price-box li::before {
-            content: '✓';
-            color: #00ff88;
-            font-weight: bold;
         }
         
         /* Process Section */
@@ -456,6 +462,11 @@
             .price-box .price {
                 font-size: 2.5rem;
             }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
         }
     </style>
 </head>
@@ -524,19 +535,25 @@
             <p class="section-subtitle">Warum ich der Richtige für euch bin</p>
             
             <div class="about-content">
+                <div class="about-image">
+                    <!-- Hier kannst du dein Bild einfügen -->
+                    <!-- <img src="pfad-zu-deinem-bild.jpg" alt="Jason Gebker"> -->
+                    <img src="jason.jpg" alt="Jason Gebker">
+                </div>
+                
                 <div class="about-text">
                     <p>Ich bin Jason aus Münster. Nach meiner Maurerausbildung und dem Bauingenieurstudium habe ich mich als Energie-Effizienz-Experte zertifiziert. <strong>Ich kenne mich mit Häusern aus – von der Bodenplatte bis zum Dach.</strong></p>
                     
                     <p style="margin-top: 1rem;">Als Product Manager bei einer Software-Firma für energetische Gebäudesanierung sehe ich täglich, was bei Immobilien schiefgehen kann. Dieses Wissen gebe ich gerne an euch weiter – ohne den ganzen offiziellen Kram.</p>
                     
                     <p style="margin-top: 1rem;">Meine Mission: Euch die Sicherheit geben, dass ihr keine Schrottimmobilie kauft. Ehrlich und auf Augenhöhe.</p>
-                </div>
-                
-                <div class="qualification-badges">
-                    <span class="badge">🏗️ Gelernter Maurer</span>
-                    <span class="badge">👷 Bauingenieur</span>
-                    <span class="badge">🎓 Energie-Effizienz-Experte</span>
-                    <span class="badge">💻 Product Manager</span>
+                    
+                    <div class="qualification-badges" style="margin-top: 2rem;">
+                        <span class="badge">🏗️ Gelernter Maurer</span>
+                        <span class="badge">👷 Bauingenieur</span>
+                        <span class="badge">🎓 Energie-Effizienz-Experte</span>
+                        <span class="badge">💻 Product Manager</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -583,13 +600,13 @@
                 <div class="price-box">
                     <div class="price">40€</div>
                     <div class="price-label">pro Stunde Aufwand</div>
-                    <ul>
-                        <li>Anfahrt wird mitberechnet</li>
-                        <li>Typischer Gesamtaufwand: 2-3 Stunden</li>
-                        <li>Besichtigung + Anfahrt + Nachbesprechung</li>
-                        <li>Meist ca. 100€ insgesamt</li>
-                        <li>Barzahlung oder Überweisung</li>
-                    </ul>
+                    <p style="margin-top: 1.5rem; line-height: 1.8;">
+                        Anfahrt wird mitberechnet<br>
+                        Typischer Gesamtaufwand: 2-3 Stunden<br>
+                        Besichtigung + Anfahrt + Nachbesprechung<br>
+                        <strong>Meist ca. 100€ insgesamt</strong><br>
+                        Barzahlung oder Überweisung
+                    </p>
                 </div>
                 <p style="color: var(--text-light);">
                     Eine komplette Hausbesichtigung mit Anfahrt und Nachbesprechung dauert meist 2-3 Stunden.<br>
