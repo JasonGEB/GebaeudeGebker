@@ -76,18 +76,13 @@
 
 .logo-icon::before {
     content: 'GG';
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 900;
     color: white;
-    font-style: italic;
-    font-family: 'Arial Black', sans-serif;
-    /* letter-spacing entfernt oder angepasst */
-    letter-spacing: -1px;
-    /* Zusätzliche Zentrierung */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 1px; /* Kleine Korrektur nach rechts */
+    font-family: 'Arial Black', Arial, sans-serif;
+    /* KEIN font-style: italic - das verursacht den Offset! */
+    /* KEIN letter-spacing oder nur minimal */
+    letter-spacing: 0;
 }
 
 .logo:hover .logo-icon {
